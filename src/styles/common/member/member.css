@@ -1,0 +1,88 @@
+.memberSection{
+    padding: 100px 0 ;
+    background-image: url('../../../images/member/mainBgimg.jpg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.memberBox_row{
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.memberBox_row .memberBox{
+    width: 100%;
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.memberBox_row .memberBox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../images/member/memberBoxBg.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+    z-index: -1;
+}
+.memberBox_row .memberBox .memberShipPlan{
+    margin-bottom: 20px;
+}
+.memberBox_row .memberBox .memberShipPlan h2{
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: 2px;
+    color: #1d1d1d;
+    font-size: 23px;
+}
+.memberBox_row .memberBox .memberShipPlan h1{
+    font-size: 60px;
+    font-weight: bold;
+    color: #1d1d1d;
+}
+.memberBox_row .memberBox .memberShipContent{
+    margin-bottom: 20px;
+}
+.memberBox_row .memberBox .memberShipContent ul li{
+    letter-spacing: 1px;
+}
+.memberBox_row .memberBox .memberShipContent ul li + li{
+    margin-top: 10px;
+}
+
+.memberBox_row .memberBox .memberShipBtn{
+    margin-top: 10px;
+    display: inline-block;
+    width: 140px;
+}
+
+.memberBox_row .memberBox.center{
+    padding: 70px 50px;
+    background-color: #4BC2A0;
+}
+.memberBox_row .memberBox.center::before{
+    opacity: 0.2;
+}
+.memberBox_row .memberBox.center .memberShipPlan h2,
+.memberBox_row .memberBox.center .memberShipPlan h1,
+.memberBox_row .memberBox.center .memberShipContent ul li{
+    color: #ffffff;
+}
+.memberBox_row .memberBox.center .memberShipBtn .main_btn{
+    background-color: #4BC2A0;
+    box-shadow: 0px 0px 0px 0px #17a27a;
+}
+.memberBox_row .memberBox.center .memberShipBtn .main_btn:hover{
+    box-shadow: 3px 3px 0px 1px #17a27a;
+}
+

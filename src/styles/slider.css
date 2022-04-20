@@ -52,6 +52,9 @@
     z-index: 9;
   }
   /* ==== Slider Style === */
+  .Banner-Slider {
+    margin-bottom: -6px;
+  }
   .Banner-Slider .item .img-fill{
     height:100vh;
     background:#000;

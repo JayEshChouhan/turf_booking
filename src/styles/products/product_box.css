@@ -1,0 +1,157 @@
+.turf_box{
+    padding: 0 10px 15px 10px;
+    background-color: #ffffff;
+    box-shadow:  0 0 20px 2px #00000024;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: calc(45px/2);
+}
+.turf_box .turfImage{
+    margin-top: -25px;
+    display: inline-block;
+    position: relative;
+}
+.turf_box .turfImage img{
+    border-radius: 10px;
+}
+.turf_box .turfImage .share-icon{
+    position: absolute;
+    bottom: -15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #4BC2A0;
+    border: 1px solid #4BC2A0;
+    color: #ffffff;
+    font-size: 14px;
+}
+.turf_box .turfDetails{
+    padding: 20px 0;
+}
+.cardOffer .offerBox{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #c4ebe0;
+    border: 1px solid #4BC2A0;
+}
+.cardOffer .offerBox .icon{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    background: #4BC2A0;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-left: -1px;
+}
+.cardOffer .offerBox .text{
+    font-size: 12px;
+    line-height: 19px;
+    padding: 0 5px;
+    color: #4BC2A0;
+}
+.turf_box .turfDetails .info{
+    margin-top: 15px;
+}
+.turf_box .turfDetails .info .title-head {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #343a40;
+}
+.turf_box .turfDetails .info .info-content {
+    margin-top: 5px;
+}
+.turf_box .turfDetails .info .info-content .info-content-address{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.turf_box .turfDetails .info .info-content .info-content-address .icon{
+    color: #ff0000;
+}
+.turf_box .turfDetails  .rating-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.turf_box .turfDetails  .rating-section > div{
+    row-gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.turf_box .turfDetails  .rating-section .info-right{
+    align-items: flex-end;
+}
+
+.turf_box .gameIcons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: calc(-45px/2);
+    left: 0;
+    padding: 0 10px;
+
+}
+.turf_box .gameIcons .gameIcons-left-items{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.turf_box .gameIcons .gameIcons-item{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 7px;
+    background-color: #ffffff;
+    box-shadow: -2px 2px 20px 2px #00000033;
+}
+.turf_box .gameIcons .arrow-box{
+    background-color: #343a40;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+.turf_box.turf_list_box{
+    margin-top: 0;
+    margin-left: 25px;
+    padding: 15px 15px 15px 0;
+    display: flex;
+}
+.turf_box.turf_list_box .turfImage{
+    margin-top: 0;
+    margin-left: -25px;
+    width: 350px;
+}
+.turf_box.turf_list_box .turfImage .share-icon{
+    right: -15px;
+    bottom: 15px;
+}
+.turf_box.turf_list_box .turfDetails{
+    width: calc(100% - 350px);
+    position: relative;
+    padding-left: 20px;
+}
+.turf_box.turf_list_box .turfDetails .gameIcons{
+    bottom: calc(-45px/2 - 15px);
+    padding: 0 0 0 20px;
+}
