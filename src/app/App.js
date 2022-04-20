@@ -2,6 +2,7 @@ import { Route,BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Home from '../pages/home';
+import Turfs from '../pages/turfs';
 import SigningIn, { SigningUp } from '../user/singin';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/allTurf" element={<Turfs />} />
         <Route exact path="/singin" element={<SigningIn />} />
         <Route exact path="/singup" element={<SigningUp />} />
       </Routes>

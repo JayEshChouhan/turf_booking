@@ -1,49 +1,50 @@
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Bg1 from "../images/slider/banner/bannerBG1.jpg"
 import Bg2 from "../images/slider/banner/bannerBG2.jpg"
 import AboutUs from "../components/aboutUs";
 import ContactUs from "../components/contactUs";
 import Member from "../components/member";
+import TimeTable from "../components/timeTable";
+import TurfBox from "../components/turf/turf";
 function SampleNextArrow(props) {
-    console.log(props);
     const { className, style, onClick } = props;
     return (
-      <div
-        className={`${className} NextArrow`}
-        style={{ ...style}}
-        onClick={onClick}
-      />
+        <div
+            className={`${className} NextArrow`}
+            style={{ ...style }}
+            onClick={onClick}
+        />
     );
-  }
-  
-  function SamplePrevArrow(props) {
+}
+
+function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={`${className} PrevArrow`}
-        style={{ ...style}}
-        onClick={onClick}
-      />
+        <div
+            className={`${className} PrevArrow`}
+            style={{ ...style }}
+            onClick={onClick}
+        />
     );
-  }
-export default function Home(props){
+}
+export default function Home(props) {
     const settings = {
-        autoplay:true,
-        autoplaySpeed:10000,
+        autoplay: true,
+        autoplaySpeed: 10000,
         speed: 600,
         slidesToShow: 1,
         slidesToScroll: 1,
-        pauseOnHover:false,
-        pauseOnDotsHover:true,
-        cssEase:'linear',
-        draggable:false,
+        pauseOnHover: false,
+        pauseOnDotsHover: true,
+        cssEase: 'linear',
+        draggable: false,
         arrows: true,
-        nextArrow: <SampleNextArrow/>,
-        prevArrow: <SamplePrevArrow/>
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
     };
-    return(
+    return (
         <>
             <div className="Banner-Slider">
                 <Slider {...settings}>
@@ -72,8 +73,10 @@ export default function Home(props){
                 </Slider>
             </div>
             <AboutUs />
+            <TurfBox/>
+            {/* <TimeTable /> */}
             <Member />
-            <ContactUs/>
+            <ContactUs />
         </>
     );
 }
