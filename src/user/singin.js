@@ -1,9 +1,56 @@
+import { config } from "@fortawesome/fontawesome-svg-core";
+import axios from "axios";
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin, userSignup } from "../api/userSignup";
 import soccer from "../images/login/soccer.webp"
 
 export default function SigningIn() {
+    const dispatch = useDispatch();
+    const auth = useSelector(state => state.LoginAuth.userAthantication)
+    // console.log(auth);
+
+    // console.log(auth);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    console.log(email);
+    console.log(password);
+
+    let item = {
+        email: email,
+        password: password
+    }
+
+    async function login(e) {
+        e.preventDefault();
+        setEmail("");
+        setPassword("");
+
+
+        // console.log(item)
+
+        const user_login = await userLogin(item);
+
+        if (user_login.status) {
+            dispatch({ type: "LOGINATHANTICATION", payload: { userAthantication: true } });
+        }
+
+
+        //     await axios.post("https://turfbooks.herokuapp.com/login", item)
+        //         .then((res) => {
+        //             console.log(res);
+        //         })
+        //         .catch((err) => {
+        //             console.log(err);
+        //         })
+
+    }
+
 
     return (
         <>
+
             <div className="user">
                 <div className="container">
                     <div className="row">
@@ -19,25 +66,33 @@ export default function SigningIn() {
                                         </div>
                                         <div className="fields">
                                             <div className="titlepage">
-                                                <h3>Login</h3>
-                                            </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                {/* <label className="inputlable">Email</label> */}
-                                                <input className="form-control myForm" placeholder="Your Email" type="email" name="Email" pattern="[^ @]*@[^ @]*" required />
-                                            </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                {/* <label className="inputlable">Password</label> */}
-                                                <input className="form-control myForm" placeholder="Password" type="password" name="Password" required />
+                                                <h3>Login {console.log(auth)}</h3>
                                             </div>
 
-                                            <div className=" col-md-12">
-                                                <button className="send">Login</button>
+                                            <div className="form-body">
+                                                <form className="form-content">
+                                                    <div className="field">
+                                                        <input type="email" id="email" name="email" value={email} placeholder="youremail@gmail.com" required onChange={(e) => setEmail(e.target.value)} />
+                                                        <label htmlFor="email">Email</label>
+                                                    </div>
+                                                    <div className="field">
+                                                        <input type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+                                                        <label htmlFor="password">Password</label>
+                                                    </div>
+
+                                                    <div className="form-footer">
+                                                        <button type="submit" className="main_btn send-btn" onClick={login} >
+                                                            <span className="btn-text">Send</span>
+                                                        </button>
+                                                        <br />
+                                                        <a className="forgot" href="#">Forgot Password?</a>
+                                                        <p className="P_tag">Don't have an account?
+                                                            <a href="#">Sign Up</a>
+                                                        </p>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <br />
-                                            <a className="forgot" href="#">Forgot Password?</a>
-                                            <p>Don't have an account?
-                                                <a href="#">Sign Up</a>
-                                            </p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -51,6 +106,37 @@ export default function SigningIn() {
 }
 
 export function SigningUp() {
+
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+
+    let item = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        phone: phone,
+        password: password
+    }
+    console.log(item);
+
+    function userRegister(e) {
+        e.preventDefault();
+
+        setFirstname("");
+        setLastname("");
+        setEmail("");
+        setPhone("");
+        setPassword("");
+        setConfirmPassword("");
+
+        userSignup(item);
+    }
+
     return (
         <>
             <div className="user">
@@ -70,33 +156,59 @@ export function SigningUp() {
                                             <div className="titlepage">
                                                 <h3>SignUp</h3>
                                             </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <input className="form-control myForm" placeholder="First Name" type="text" name="First Name" />
+                                            <div className="container">
+
+                                                <div className="form-body">
+
+                                                    <form className="form-content">
+                                                        <div className="row">
+                                                            <div className="col-sm-6">
+                                                                <div className="field">
+                                                                    <input type="text" id="First Name" name="First Name" value={firstname} required onChange={(e) => setFirstname(e.target.value)} />
+                                                                    <label htmlFor="First Name">First name</label>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <div className="field">
+                                                                    <input type="text" id="Last Name" name="Last Name" value={lastname} required onChange={(e) => setLastname(e.target.value)} />
+                                                                    <label htmlFor="Last Name">Last Name</label>
+                                                                </div>
+                                                            </div>
+                                                            <div className="field">
+                                                                <input type="email" id="email" name="email" value={email} placeholder="youremail@gmail.com" required onChange={(e) => setEmail(e.target.value)} />
+                                                                <label htmlFor="email">Email</label>
+                                                            </div>
+                                                            <div className="field">
+                                                                <input type="text" id="phone" name="phone" value={phone} required onInput={(e) => setPhone(e.target.value = e.target.value.slice(0, 10))} />
+                                                                <label htmlFor="phone">Phone no.</label>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <div className="field">
+                                                                    <input type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+                                                                    <label htmlFor="password">Password</label>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <div className="field">
+                                                                    <input type="password" id="re-type password" name="re-type password" value={confirmPassword} required onChange={(e) => setConfirmPassword(e.target.value)} />
+                                                                    <label htmlFor="re-type password">Confirm Password</label>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-footer">
+                                                                <button type="submit" className="main_btn send-btn" onClick={userRegister}>
+
+                                                                    <span className="btn-text">Send</span>
+                                                                </button>
+                                                                <br />
+                                                                <a className="forgot" href="#">Forgot Password?</a>
+                                                                <p className="P_tag">Already have an account?
+                                                                    <a href="#">Login</a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <input className="form-control myForm" placeholder="Last Name" type="text" name="Last Name" />
-                                            </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <input className="form-control myForm" placeholder="Email" type="email" name="Email" pattern="[^ @]*@[^ @]*" />
-                                            </div>
-                                            <div className=" col-md-6">
-                                                <input className="form-control myForm" placeholder="Phone No." type="number" name="Phone" min={0}
-                                                    onInput={(e) => e.target.value = e.target.value.slice(0, 10)}
-                                                    maxLength={10} required />
-                                            </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <input className="form-control myForm" placeholder="Password" type="password" name="Password" />
-                                            </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <input className="form-control myForm" placeholder="Confirm Password" type="password" name="Confirm Password" />
-                                            </div>
-                                            <div className=" col-md-12">
-                                                <button className="send">Submit</button>
-                                            </div>
-                                            <br />
-                                            <p>Already have an account?
-                                                <a href="#">Login</a>
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
