@@ -79,7 +79,7 @@ export default function Header(porps) {
                                 </button>
                             </Col>
                             <Col lg={2} className="d-lg-block d-none">
-                                <button className='main_btn'>Book A Turf</button>
+                                <Link to="allTurf" ><button className='main_btn'>Book A Turf</button></Link>
                             </Col>
                         </Row>
                     </Container>

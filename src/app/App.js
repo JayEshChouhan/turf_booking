@@ -6,7 +6,7 @@ import Home from '../pages/home';
 import Turfs from '../pages/turfs';
 import SigningIn, { SigningUp } from '../user/singin';
 import Store from '../redux/store/store';
-import UserProfile from '../components/user_profile';
+import UserProfile, { MyBookings } from '../components/user_profile';
 
 function App() {
   return (
