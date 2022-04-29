@@ -8,6 +8,7 @@ import ContactUs from "../components/contactUs";
 import Member from "../components/member";
 import TimeTable from "../components/timeTable";
 import TurfBox from "../components/turf/turf";
+import { Container } from "react-bootstrap";
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -73,7 +74,36 @@ export default function Home(props) {
                 </Slider>
             </div>
             <AboutUs />
-            <TurfBox/>
+            <div className="product-Slider">
+                <Container>
+                    <Slider slidesToShow={3} slidesToScroll={1}>
+                        <TurfBox/>
+                        <TurfBox/>
+                        <TurfBox/>
+                        <TurfBox/>
+                    </Slider>
+                </Container>
+            </div>
+            {/* <OwlCarousel className='owl-theme' items={3} loop margin={10} nav>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+                <div class='item'>
+                    <TurfBox/>
+                </div>
+            </OwlCarousel> */}
             {/* <TimeTable /> */}
             <Member />
             <ContactUs />

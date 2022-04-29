@@ -68,11 +68,12 @@ export default function Header(porps) {
                             </Col>
                             <Col lg={8} xs={9}>
                                 <ul className={toggle ? "main_nav on" : "main_nav"}>
-                                    <li><a href='javascript:;'>Home</a></li>
-                                    <li><a href='javascript:;'>About Us</a></li>
-                                    <li><a href='javascript:;'>Events</a></li>
-                                    <li><a href='javascript:;'>News</a></li>
-                                    <li><a href='javascript:;'>Contact Us</a></li>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/">About Us</Link></li>
+                                    <li><Link to="allturfs">Turfs</Link></li>
+                                    <li><Link to="/">Events</Link></li>
+                                    <li><Link to="/">News</Link></li>
+                                    <li><Link to="/">Contact Us</Link></li>
                                 </ul>
                                 <button id="toggle" className={toggle ? "d-lg-none d-block on" : "d-lg-none d-block"} onClick={() => mobileMwnu()}>
                                     <span></span>

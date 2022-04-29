@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin, userSignup } from "../api/userSignup";
 import soccer from "../images/login/soccer.webp"
+import Input from "../utils/input";
 
 export default function SigningIn() {
     const dispatch = useDispatch();
@@ -47,7 +48,6 @@ export default function SigningIn() {
 
     }
 
-
     return (
         <>
 
@@ -71,12 +71,13 @@ export default function SigningIn() {
 
                                             <div className="form-body">
                                                 <form className="form-content">
+                                                    {/* <Input type="email" id="email" label="Email" name="email" value={email} placeholder="youremail@gmail.com" required={true} onChange={(e)=>setEmail(e.target.value)}/> */}
                                                     <div className="field">
                                                         <input type="email" id="email" name="email" value={email} placeholder="youremail@gmail.com" required onChange={(e) => setEmail(e.target.value)} />
                                                         <label htmlFor="email">Email</label>
                                                     </div>
                                                     <div className="field">
-                                                        <input type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+                                                        <input className="" type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
                                                         <label htmlFor="password">Password</label>
                                                     </div>
 
