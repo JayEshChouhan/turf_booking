@@ -1,3 +1,16 @@
+:root{
+  --rs-bg-active: #F2A922;
+  --rs-btn-primary-bg: #F2A922;
+  --rs-input-focus-border: #F2A922;
+  --rs-listbox-option-hover-bg: rgb(242 169 34 / 25%);
+  --rs-listbox-option-hover-text: #F2A922;
+  --rs-text-active: #F2A922;
+  --rs-btn-primary-hover-bg: #f0a61d;
+  --rs-btn-link-text: #F2A922;
+}
+
+
+
 @import url('bootstrap/dist/css/bootstrap.css');
 @import url('rsuite/dist/rsuite.min.css');
 @import url('./animat/animate.min.css');
@@ -53,6 +66,7 @@ p, a {
   margin: 0;
   padding: 0;
   color: #797979;
+  text-decoration: none !important;
 }
 
 p {
@@ -87,86 +101,62 @@ ul {
   color: #ffffff;
 }
 
-.field {
-  display: -webkit-box;
-  display: -ms-flexbox;
+
+.product-Slider .slick-slide{
+  padding: 0 calc(15px/2);
+} 
+
+
+
+.field  {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -ms-flex-flow: column-reverse;
   flex-flow: column-reverse;
-  margin-bottom: 0.5rem;
-  height: 3.25rem;
+  margin-bottom: 15px;
   position: relative;
 }
-
-.field input, 
-.field textarea {
+.field > input{
+  height: 36px;
+}
+.field > input, 
+.field > textarea {
   width: 100%;
   font-size: 1rem;
-  border: 0;
-  border-bottom: 1px solid rgba(15, 54, 91, 0.4);
-  border-radius: 0;
+  border: 1px solid #e5e5ea;
+  border-radius: 6px;
   background-color: transparent;
-  padding: 0!important;
-  height: 2rem;
-  cursor: text;
-  resize: none;
+  padding: 7px 11px;
 }
 
-.field label {
-  margin: 0;
-  font-size: 0.5rem;
+.field > label {
+  margin-bottom: 5px;
+  font-size: 12px;
   font-weight: 400;
-  color: rgba(15, 54, 91, 0.4);
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
+  color: #000000;
   transition: all 0.2s;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
 }
-.field input::placeholder,
-.field textarea::placeholder{
-  color: #FFFFFF;
-}
-.field input:focus::placeholder,
-.field input:valid::placeholder,
-.field textarea:focus::placeholder,
-.field textarea:valid::placeholder{
-  color: #797979;
+.field > input::placeholder,
+.field > textarea::placeholder{
   font-size: 14px;
 }
-.field input+label, 
-.field textarea+label {
+
+.field > input+label, 
+.field > textarea+label {
   cursor: text;
   max-width: 50%;
-  white-space: nowrap;
   overflow: hidden;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  -webkit-transform-origin: left bottom;
-  -ms-transform-origin: left bottom;
-  transform-origin: left bottom;
-  -webkit-transform: translate(0, 1.9rem) scale(2);
-  -ms-transform: translate(0, 1.9rem) scale(2);
-  transform: translate(0, 1.9rem) scale(2);
 }
-.field input:focus,
-.field textarea:focus {
+.field > input:focus,
+.field > textarea:focus {
   outline: 0;
   border-bottom: 2px solid #0F365B;
 }
-.field input:focus ~ label, 
-.field input:valid + label, 
-.field textarea:focus ~ label, 
-.field textarea:valid + label {
-  -webkit-transform: translate(0, 0) scale(1);
-  -ms-transform: translate(0, 0) scale(1);
-  transform: translate(0, 0) scale(1);
-  font-size: 0.8rem;
+/* .field > input:focus ~ label, 
+.field > input:valid + label, 
+.field > textarea:focus ~ label, 
+.field > textarea:valid + label {
   color: #0F365B;
-  cursor: pointer;
-}
+  cursor: pointer; 
+} */
 
 .rangeSlider .rs-slider-progress-bar{
   background-color: #F2A922;

@@ -18,9 +18,6 @@ export default function ContactUs(props){
             setSendSuccess(false)
             setSendText(true)
         },3000)
-        // useEffect(()=>{
-        //     set
-        // })
     }
     return(
         <>

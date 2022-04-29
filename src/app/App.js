@@ -7,6 +7,7 @@ import Turfs from '../pages/turfs';
 import SigningIn, { SigningUp } from '../user/singin';
 import Store from '../redux/store/store';
 import UserProfile from '../components/user_profile';
+import TurfSingle from '../pages/turf_single';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/allTurf" element={<Turfs />} />
+          <Route exact path="/allTurfs" element={<Turfs />} />
+          <Route exact path="/allTurfs/:turf" element={<TurfSingle />} />
           <Route exact path="/singin" element={<SigningIn />} />
           <Route exact path="/singup" element={<SigningUp />} />
           <Route exact path="/userprofile" element={<UserProfile />} />
